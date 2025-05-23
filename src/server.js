@@ -21,6 +21,8 @@ app.post('/users', async (req, res) => {
 });
 
 app.get('/users', async (req, res) => {
+    console.log(req.query)
+
     let users = []
 
     if(req.query) {
@@ -40,6 +42,8 @@ app.get('/users', async (req, res) => {
 });
 
 app.put('/users/:id', async (req, res) => {
+    console.log(req)
+
     await prisma.user.update({
         where: {
             id: req.params.id
